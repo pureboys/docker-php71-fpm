@@ -64,4 +64,4 @@ RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 COPY ./conf/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf   
 
-WORKDIR /web
+WORKDIR /data
