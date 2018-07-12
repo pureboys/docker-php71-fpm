@@ -59,9 +59,9 @@ RUN apt-get update && apt-get upgrade -y \
     && apt-get clean \
     && rm -Rf /tmp/*
 
-RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
-    && echo 'Asia/Shanghai' >/etc/timezone \
+COPY ./conf/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf  
 
-COPY ./conf/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf   
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+
 
 WORKDIR /data
