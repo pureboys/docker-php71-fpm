@@ -52,6 +52,7 @@ RUN apt-get update && apt-get upgrade -y \
     && pecl install memcached && docker-php-ext-enable memcached \
     && docker-php-ext-configure intl  \
     && docker-php-ext-install intl \
+    && docker-php-ext-install gettext \
     && pecl install mongodb && docker-php-ext-enable mongodb \
     && pecl install redis && docker-php-ext-enable redis \
     && pecl install xdebug && docker-php-ext-enable xdebug \
